@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+<title>VerktygHylla</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/component.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <aside class="logo">VerktygHylla</aside>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="cart">
+      <span class="cart-count"></span>
+      <div class="cart-items"></div>
+    </div>
+  </nav>
+<main>
+  <section class="container">
+    <!-- Item 1 -->
+    <article class="item">
+      <div class="item-image">
+        <img src="img/hammare.jpg" alt="Hammer">
+      </div>
+      <div class="item-content">
+        <h2>Hammar</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe rerum nisi quo</p>
+        <button class="borrow-button" data-item="Hammer" onclick="borrowItem(this, 'Hammer')">Låna</button>
+      </div>
+    </article>
+     <!-- Item 2 -->
+    <article class="item">
+      <article class="item-image">
+        <img src="/img/yxar.jpg" alt="Yxar">
+      </article>
+      <article class="item-content">
+        <h2>Yxar</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe rerum nisi quo</p>
+        <button class="borrow-button" data-item="Yxar" onclick="borrowItem(this, 'Yxar')">Låna</button>
+      </article>
+    </article>
+     <!-- Item 3 -->
+    <article class="item">
+      <article class="item-image">
+        <img src="img/mattband.jpg">
+      </article>
+      <article class="item-content">
+        <h2>mattband</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe rerum nisi quo</p>
+        <button class="borrow-button" data-item="mattband" onclick="borrowItem(this, 'mattband')">Låna</button>
+      </article>
+    </article>
+     <!-- Item 4 -->
+    <article class="item">
+      <article class="item-image">
+        <img src="img/skiftnyckel.jpg" alt="Yxar">
+      </article>
+      <article class="item-content">
+        <h2>Skiftnyckel</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe rerum nisi quo</p>
+        <button class="borrow-button" data-item="skiftnyckel" onclick="borrowItem(this, 'syed')">Låna</button>
+      </article>
+    </article>
+     <!-- Item 5 --> 
+    <article class="item">
+      <article class="item-image">
+        <img src="/img/syed-hussaini-MXeDE_yCdHQ-unsplash.jpg" alt="Yxar">
+      </article>
+      <article class="item-content">
+        <h2>Skruvdragare</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe rerum nisi quo</p>
+        <button class="borrow-button" data-item="skruvdragare" onclick="borrowItem(this, 'skiftnyckel')">Låna</button>
+      </article>
+    </article>
+    <footer>
+      <p>&copy; 2024 VerktygHylla. All rights reserved.</p>
+    </footer>
+    
+  </section>
+</main>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
