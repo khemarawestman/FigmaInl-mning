@@ -4,7 +4,7 @@
  --cta-color-return:#0B62E5;
  --cta-color-prime:#FF0021;
  --secondary-color:#5CDB5C;
- --main-font: 'Roboto', sans-serif;
+ --main-font: 'Roboto', sans-serif ;
  --info-font: 'Roboto', sans-serif;
   
 
@@ -26,6 +26,7 @@
   }
   p{
     font-family: var(--info-font);
+    font-size: 10px;
 
   }
 
@@ -56,7 +57,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 24px;
     cursor: pointer;
     border-radius: 5px;
   }
