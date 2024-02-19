@@ -6,6 +6,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 <title>VerktygHylla</title>
 <link rel="stylesheet" href="css/style.css">
@@ -19,12 +20,31 @@
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Min sida</a></li>
+      <li><a href="minsida.html">Min sida</a></li>
     </ul>
-    <div class="cart">
-      <span class="cart-count"></span>
-      <div class="cart-items"></div>
+    <div class="icons">
+     
+      <a href="#cart">
+        <i class="fas fa-shopping-cart cart-count"></i>
+      </a>
+    
+      
+      <div class="cart-items-container">
+        <div class="cart-items-list"></div> 
+        <button id="confirm-btn">Bekräfta</button>
+      </div>
+    
+     
+      <a href="#search">
+        <i class="fas fa-search"></i>
+      </a>
+      
+      
+      <a href="#user">
+        <i class="fas fa-user"></i>
+      </a>
     </div>
+  
   </nav>
 <main>
   <section class="container">
@@ -35,8 +55,8 @@
       </div>
       <div class="item-content">
         <h2>Hammar</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe rerum nisi quo</p>
-        <button class="borrow-button" data-item="Hammer" onclick="borrowItem(this, 'Hammer')">Låna</button>
+        <p>Banen kan vara fyrkantig eller rund. Plan är slagytan på en slägga. Kula är ett halvklot som används vid metallarbete. Pen har en smal, avlång, avrundad slagyta.</p>
+        <button class="borrow-button" data-item="Hammar" onclick="borrowItem(this, 'Hammar')">Låna</button>
       </div>
     </article>
      <!-- Item 2 -->
@@ -46,7 +66,7 @@
       </article>
       <article class="item-content">
         <h2>Yxar</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe rerum nisi quo</p>
+        <p>Banen kan vara fyrkantig eller rund. Plan är slagytan på en slägga. Kula är ett halvklot som används vid metallarbete. Pen har en smal, avlång, avrundad slagyta.</p>
         <button class="borrow-button" data-item="Yxar" onclick="borrowItem(this, 'Yxar')">Låna</button>
       </article>
     </article>
@@ -57,7 +77,7 @@
       </article>
       <article class="item-content">
         <h2>mattband</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe rerum nisi quo</p>
+        <p>Banen kan vara fyrkantig eller rund. Plan är slagytan på en slägga. Kula är ett halvklot som används vid metallarbete. Pen har en smal, avlång, avrundad slagyta.</p>
         <button class="borrow-button" data-item="mattband" onclick="borrowItem(this, 'mattband')">Låna</button>
       </article>
     </article>
@@ -68,7 +88,7 @@
       </article>
       <article class="item-content">
         <h2>Skiftnyckel</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe rerum nisi quo</p>
+        <p>Banen kan vara fyrkantig eller rund. Plan är slagytan på en slägga. Kula är ett halvklot som används vid metallarbete. Pen har en smal, avlång, avrundad slagyta.</p>
         <button class="borrow-button" data-item="skiftnyckel" onclick="borrowItem(this, 'syed')">Låna</button>
       </article>
     </article>
@@ -79,13 +99,13 @@
       </article>
       <article class="item-content">
         <h2>Skruvdragare</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe rerum nisi quo</p>
-        <button class="borrow-button" data-item="skruvdragare" onclick="borrowItem(this, 'skiftnyckel')">Låna</button>
+        <p>Banen kan vara fyrkantig eller rund. Plan är slagytan på en slägga. Kula är ett halvklot som används vid metallarbete. Pen har en smal, avlång, avrundad slagyta.</p>
+        <button class="borrow-button" data-item="skruvdragare" onclick="borrowItem(this, 'skruvdragare')">Låna</button>
       </article>
     </article>
     <footer>
       <p>&copy; 2024 VerktygHylla. All rights reserved.</p>
-    </footer>
+  </footer>
     
   </section>
 </main>

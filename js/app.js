@@ -1,45 +1,62 @@
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', () => {
+  const cartItemsContainer = document.querySelector('.cart-items-container');
+  const cartItemsList = document.querySelector('.cart-items-list');
+  const cartIcon = document.querySelector('.fa-shopping-cart');
+  const confirmBtn = document.getElementById('confirm-btn');
+  let cart = new Set(); 
+
+
   window.borrowItem = function(button, itemName) {
-    // Mark the item as not available
+    cart.add(itemName);
+    updateCart(); 
     button.classList.add('not-available');
     button.innerText = 'Ej Tillgängligt';
-    button.disabled = true;
-    const cartItems = document.querySelector('.cart-items');
-    const itemDiv = document.createElement('div');
-    itemDiv.textContent = `${itemName} `;
-    itemDiv.dataset.item = itemName;
-
-    const returnButton = document.createElement('button');
-    returnButton.className = 'return-button';
-    returnButton.textContent = 'Återlämna';
-    returnButton.onclick = function() { returnItem(itemName, itemDiv); }; 
-
-    itemDiv.appendChild(returnButton);
-    cartItems.appendChild(itemDiv);
-    updateCartCount();
+    button.disabled = true; 
   };
-  window.returnItem = function(itemName, itemDiv) {
-    const buttons = document.querySelectorAll('.borrow-button');
-    buttons.forEach(button => {
-      if (button.dataset.item === itemName) { 
+  function updateCart() {
+    cartItemsList.innerHTML = ''; 
+
+    cart.forEach(itemName => {
+      const itemElement = document.createElement('div');
+      itemElement.className = 'cart-item';
+      itemElement.textContent = itemName;
+
+      const returnButton = document.createElement('button');
+      returnButton.textContent = 'Tabort';
+      returnButton.className = 'return-button';
+      returnButton.onclick = () => returnItem(itemName, itemElement);
+
+      itemElement.appendChild(returnButton);
+      cartItemsList.appendChild(itemElement);
+    });
+    cartItemsContainer.style.display = cart.size > 0 ? 'block' : 'none';
+  }
+
+  
+  function returnItem(itemName, itemElement) {
+    cart.delete(itemName); 
+    itemElement.remove(); 
+    document.querySelectorAll('.borrow-button').forEach(button => {
+      if (button.dataset.item === itemName) {
         button.classList.remove('not-available');
         button.innerText = 'Låna';
         button.disabled = false;
       }
     });
-    itemDiv.remove();
-
-    updateCartCount();
-  };
-  function updateCartCount() {
-    const cartCount = document.querySelector('.cart-items').children.length;
-    const cartCountElement = document.querySelector('.cart-count');
-    cartCountElement.textContent = `Cart (${cartCount})`;
+    cartItemsContainer.style.display = cart.size > 0 ? 'block' : 'none';
   }
-  const cartElement = document.querySelector('.cart');
-  const cartItems = document.querySelector('.cart-items');
-  cartElement.addEventListener('click', function() {
-    cartItems.classList.toggle('visible');
+  confirmBtn.addEventListener('click', () => {
+    if (cart.size > 0) {
+      alert('Tack för att du välja Verktyghylla !  Ordernr: 2989');
+      cart.clear();
+      updateCart(); 
+    } else {
+      alert('din kundvagn är tomt!');
+    }
   });
-  updateCartCount();
+  cartIcon.addEventListener('click', () => {
+    const isVisible = cartItemsContainer.style.display === 'block';
+    cartItemsContainer.style.display = isVisible ? 'none' : 'block';
+  });
+  updateCart();
 });
